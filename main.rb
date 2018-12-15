@@ -85,7 +85,9 @@ end
 #puts arr_josi = []
 str = arr_meisi[rand(arr_meisi.length)] 
 strbuf = ""
-arr_var.each do |val|
+random = Random.new
+rnd = random.rand(6)
+arr_var.each do |val,i|
   if "#{val}" == "名詞" then
     str += arr_meisi[rand(arr_meisi.length)] 
   elsif "#{val}" == "助詞" then
@@ -108,6 +110,9 @@ arr_var.each do |val|
     str += arr_sonota[rand(arr_fukusi.length)] 
   end
   strbuf = "#{val}"
+  if rnd + 2 <= i && !(rnd == 5) || rnd == 5 && i >= 10 then
+    break    
+  end
   if str.bytesize >= 270 then
     str = str[0,269]
     break
@@ -117,16 +122,12 @@ end
 random = Random.new
 rnd = random.rand(6)
 if rnd == 0 then
-  str += "りす"
+  str += "りす。"
 elsif rnd == 1 then
-  str += "りす～"
-elsif rnd ==2 then
-  str += "りすー"
-elsif rnd == 3 then
   str += "りす！"
-elsif rnd ==4 then
+elsif rnd ==2 then
   str += "りす？"
-elsif rnd == 5 then
+elsif rnd == 3 then
   str += "……"
 end
 #puts "-------------------- ツイートします --------------------"
