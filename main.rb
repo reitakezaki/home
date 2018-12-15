@@ -43,7 +43,7 @@ client.home_timeline.each do |tweet|
 end
 
 #puts "-------------------- 品詞配列振り分け ------------------"
-client.home_timeline(count: 120).each do |tweet|
+client.home_timeline(count: 0).each do |tweet|
   if tweet.is_a?(Twitter::Tweet)
     #puts(tweet.text)
     if !(tweet.text.include?("http")) && !(tweet.user.screen_name == "@hanapipi961_bot")
@@ -73,7 +73,7 @@ client.home_timeline(count: 120).each do |tweet|
   end
 end
 
-puts "-------------------- 配列出力開始 --------------------"
+#puts "-------------------- 配列出力開始 --------------------"
 #puts arr_var
 #puts arr_meisi.sort_by{rand}
 #puts arr_josi = []
@@ -123,6 +123,6 @@ elsif rnd ==4 then
 elsif rnd == 5 then
   str += "……"
 end
-puts "-------------------- ツイートします --------------------"
-puts str
+#puts "-------------------- ツイートします --------------------"
+#puts str
 client.update(str)
