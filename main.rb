@@ -132,4 +132,16 @@ elsif rnd == 3 then
 end
 #puts "-------------------- ツイートします --------------------"
 #puts str
-client.update(str)
+  
+client.home_timeline(count: 60).each do |tweet|
+  if tweet.is_a?(Twitter::Tweet)
+    puts(tweet.user.name)
+    puts("@#{tweet.user.screen_name}")
+    puts(tweet.text)
+    puts("-----")
+    if tweet.text == "あの"
+      client.update(str)
+    end
+  end
+end
+
