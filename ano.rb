@@ -14,7 +14,7 @@ stream_client = Twitter::Streaming::Client.new do |config|
   config.access_token_secret = ENV['MY_ACCESS_TOKEN_SECRET'] #Access Token Secret
 end
 
-stream_client.user do |tweet|
+client.home_timeline.each do |tweet|
   if tweet.is_a?(Twitter::Tweet)
     puts(tweet.user.name)
     puts("@#{tweet.user.screen_name}")
