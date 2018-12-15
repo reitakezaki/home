@@ -29,8 +29,9 @@ arr_fukusi = []
 arr_sonota = []
 
 #Timer
-timers = Timers::Group.new
-timer = timers.after(120)
+#timers = Timers::Group.new
+#timer = timers.after(120)
+sleep 120
 
 #puts "-------------------- 品詞リスト作成 --------------------"
 client.home_timeline.each do |tweet|
