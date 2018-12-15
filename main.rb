@@ -103,7 +103,7 @@ arr_var.each do |val,i|
     str += arr_sonota[rand(arr_fukusi.length)] 
   end
   strbuf = "#{val}"
-  if rnd + 2 <= i && !(rnd == 5) || rnd == 5 && i >= 10 then
+  if rnd <= i && !(rnd == 5) || rnd == 5 && i >= 10 then
     break    
   end
   if str.bytesize >= 270 then
