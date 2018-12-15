@@ -1,5 +1,6 @@
 require 'twitter'
 require 'natto'
+require 'timers'
 
 ENV['SSL_CERT_FILE'] = File.expand_path('./cacert.pem') #実行時SSLのエラーが出る場合に追記
 
@@ -26,6 +27,10 @@ arr_setuzokusi = []
 arr_kigou = []
 arr_fukusi = []
 arr_sonota = []
+
+#Timer
+timers = Timers::Group.new
+timer = timers.after(300)
 
 #puts "-------------------- 品詞リスト作成 --------------------"
 client.home_timeline.each do |tweet|
