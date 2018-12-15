@@ -1,1 +1,1 @@
-bot: ruby ano.rb
+bot: ruby main.rb
