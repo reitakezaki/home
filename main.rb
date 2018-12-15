@@ -78,11 +78,16 @@ puts "-------------------- 配列出力開始 --------------------"
 #puts arr_meisi.sort_by{rand}
 #puts arr_josi = []
 str = arr_meisi[rand(arr_meisi.length)] 
+strbuf = ""
 arr_var.each do |val|
   if "#{val}" == "名詞" then
     str += arr_meisi[rand(arr_meisi.length)] 
   elsif "#{val}" == "助詞" then
-    str += arr_josi[rand(arr_josi.length)] 
+    if strbuf == "助詞" then
+      #何もしない
+    else
+      str += arr_josi[rand(arr_josi.length)] 
+    end
   elsif "#{val}" == "動詞" then
     str += arr_dousi[rand(arr_dousi.length)] 
   elsif "#{val}" == "助動詞" then
@@ -96,7 +101,7 @@ arr_var.each do |val|
   else
     str += arr_sonota[rand(arr_fukusi.length)] 
   end
-  
+  strbuf = "#{val}"
   if str.bytesize >= 270 then
     str = str[0,269]
     break
