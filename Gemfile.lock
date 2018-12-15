@@ -46,7 +46,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  mecab
+  mecab (= 0.996)
   natto
   twitter
 
