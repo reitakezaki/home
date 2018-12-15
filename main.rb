@@ -30,7 +30,7 @@ arr_sonota = []
 
 #Timer
 timers = Timers::Group.new
-timer = timers.after(300)
+timer = timers.after(120)
 
 #puts "-------------------- 品詞リスト作成 --------------------"
 client.home_timeline.each do |tweet|
@@ -48,7 +48,7 @@ client.home_timeline.each do |tweet|
 end
 
 #puts "-------------------- 品詞配列振り分け ------------------"
-client.home_timeline(count: 0).each do |tweet|
+client.home_timeline(count: 60).each do |tweet|
   if tweet.is_a?(Twitter::Tweet)
     #puts(tweet.text)
     if !(tweet.text.include?("http")) && !(tweet.user.screen_name == "@hanapipi961_bot")
